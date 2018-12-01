@@ -8,19 +8,19 @@ self.__precacheManifest = [
     "url": "/daycare-portal/static/js/runtime~main.7dd38f48.js"
   },
   {
-    "revision": "416c46cea931caa3a30e",
-    "url": "/daycare-portal/static/js/main.416c46ce.chunk.js"
+    "revision": "82c812616b236e9e5811",
+    "url": "/daycare-portal/static/js/main.82c81261.chunk.js"
   },
   {
     "revision": "b080b7308c9dcde4066d",
     "url": "/daycare-portal/static/js/1.b080b730.chunk.js"
   },
   {
-    "revision": "416c46cea931caa3a30e",
-    "url": "/daycare-portal/static/css/main.0be3413d.chunk.css"
+    "revision": "82c812616b236e9e5811",
+    "url": "/daycare-portal/static/css/main.be7310fc.chunk.css"
   },
   {
-    "revision": "6cb2fd84d3c0cb2e9af6aec8f73cd737",
+    "revision": "c2f9b7001a6aa00659a75981ee025a9b",
     "url": "/daycare-portal/index.html"
   }
 ];

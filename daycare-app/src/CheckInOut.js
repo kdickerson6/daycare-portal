@@ -12,6 +12,10 @@ class CheckInOut extends Component {
         }
     }
 
+    cancelClickHandler() {
+        this.props.cancelClickHandler();
+    }
+
     getLastAction() {
         if(testPerson.last_action.type === "check_in") {
             this.setState({checkIn: true});
@@ -33,7 +37,7 @@ class CheckInOut extends Component {
             </div>
 
             <div>{isCheckIn ? <h5>Last Check Out Time: {testPerson.last_action.time}</h5> : <h5>Last Check In Time: {testPerson.last_action.time}</h5>} </div>
-            <div>{isCheckIn ? <Button waves='light'>CHECKIN</Button> : <Button waves='light'>CHECKOUT</Button>}</div>
+            <div><Button className='red lighten-2' waves='light' onClick={this.cancelClickHandler.bind(this)}>CANCEL</Button> {isCheckIn ? <Button waves='light'>CHECKIN</Button> : <Button waves='light'>CHECKOUT</Button>}</div>
             </div>          
         );
     }

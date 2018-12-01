@@ -20,6 +20,10 @@ class App extends Component {
     this.setState({displayCheckInOut: true, id:idValue});
   }
 
+  handleCancelClick() {
+    this.setState({displayCheckInOut: false, id: '', displayAdmin: false});
+  }
+
   handleAdminClick() {
     this.setState({displayAdmin:true});
   }
@@ -27,6 +31,7 @@ class App extends Component {
   handleHomeClick() {
     this.setState({displayCheckInOut: false, displayAdmin: false});
   }
+
 
   render() {
     const shouldDisplayCheckInOut = this.state.displayCheckInOut;
@@ -45,7 +50,7 @@ class App extends Component {
           <header className="App-header">
             <img src={Logo} alt=""/>
           </header>
-          <div className="App">{shouldDisplayCheckInOut ? <CheckInOut currentId={this.state.id}/> : <Form enterClickHandler={this.handleEnterClick.bind(this)}/>}</div>
+          <div className="App">{shouldDisplayCheckInOut ? <CheckInOut currentId={this.state.id} cancelClickHandler={this.handleCancelClick.bind(this)}/> : <Form enterClickHandler={this.handleEnterClick.bind(this)}/>}</div>
         </div>)
         }
       </div>

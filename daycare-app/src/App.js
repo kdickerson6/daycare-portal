@@ -11,38 +11,43 @@ class App extends Component {
     super(props);
     this.state = {
       displayCheckInOut: false,
-      displayAdmin: false
+      displayAdmin: false,
+      id:''
     }
   }
 
-  handleEnterClick() {
-    this.setState({displayCheckInOut: true});
+  handleEnterClick(idValue) {
+    this.setState({displayCheckInOut: true, id:idValue});
   }
 
   handleAdminClick() {
     this.setState({displayAdmin:true});
   }
 
+  handleHomeClick() {
+    this.setState({displayCheckInOut: false, displayAdmin: false});
+  }
+
   render() {
     const shouldDisplayCheckInOut = this.state.displayCheckInOut;
     const shouldDisplayAdmin = this.state.displayAdmin;
+    var id = '';
     return (
-      <div className="App">
+      <div>
         <nav>
           <Navbar className="Nav" brand='Day Care Portal' right>
-            <NavItem href='#'>Home</NavItem>
+            <NavItem onClick={this.handleHomeClick.bind(this)}>Home</NavItem>
             <NavItem onClick={this.handleAdminClick.bind(this)}>Admin</NavItem>
           </Navbar>
         </nav>
         {shouldDisplayAdmin ? <Admin/> : 
-        (
-        <div><header className="App-header">
-          <img src={Logo} alt=""/>
-        </header>
-        <div className="Form">
-          {shouldDisplayCheckInOut ? <CheckInOut /> : <Form enterClickHandler={this.handleEnterClick.bind(this)}/>}
-        </div></div>
-        )}
+        (<div>
+          <header className="App-header">
+            <img src={Logo} alt=""/>
+          </header>
+          <div className="App">{shouldDisplayCheckInOut ? <CheckInOut currentId={this.state.id}/> : <Form enterClickHandler={this.handleEnterClick.bind(this)}/>}</div>
+        </div>)
+        }
       </div>
     );
   }

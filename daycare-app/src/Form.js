@@ -2,8 +2,21 @@ import React, {Component} from 'react';
 import {Row, Input, Col, Button} from 'react-materialize';
 
 class Form extends Component {
-    handleEnterClick() {
-        this.props.enterClickHandler();
+    constructor(props) {
+        super(props); 
+        this.state = {
+            id: ''
+        }
+    }
+
+    handleInputChange(e){
+        this.setState({id: e.target.value});
+    }
+
+    enterClickHandler() {
+        var id = this.state.id;
+        console.log('entered id:  ', id);
+        this.props.enterClickHandler(this.state.id);
     }
 
     render() {
@@ -12,10 +25,10 @@ class Form extends Component {
                 <h4>Please enter your ID to check in or check out. </h4>
                 <Row>
                     <Col offset="s3 m3 l4"></Col>
-                    <Input s={6} m={6} l={4} label="Parent or Teacher ID" />
+                    <Input s={6} m={6} l={4} label="Parent or Teacher ID" onChange={this.handleInputChange.bind(this)} />
                 </Row>
                 <Row>
-                    <Button waves='light' onClick={this.handleEnterClick.bind(this)}>Enter</Button>
+                    <Button waves='light' onClick={this.enterClickHandler.bind(this)}>Enter</Button>
                 </Row>
             </div>
         );

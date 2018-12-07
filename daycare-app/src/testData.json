@@ -1,24 +1,35 @@
 {
-    "persons": [
-        {
-            "id":1234,
-            "name":"Stephanie Cruz", 
-            "last_check_in":"2018-12-01T01:10:46",
-            "last_check_out":"2018-11-30T01:10:46",
-            "last_action": {
-                "type":"check_out",
-                "time":"2018-11-30T01:10:46"
-            }
+    "daycare" : {
+      "member" : {
+        "contact_info" : {
+          "city" : "Plantation",
+          "phone" : "3214567898",
+          "postal_code" : "33324",
+          "state" : "FL",
+          "street_address" : "1440 Finch Lane"
         },
-        {
-            "id":7890,
-            "name":"Kristin Antoon", 
-            "last_check_in":"2018-11-30T01:10:46",
-            "last_check_out":"2018-12-01T01:10:46",
-            "last_action": {
-                "type":"check_in",
-                "time":"2018-11-30T01:10:46"
-            }
-        }
-    ]
-}
+        "emergency_contact" : {
+          "first_name" : "Kristin",
+          "id" : "20000000001",
+          "last_name" : "Torres",
+          "relationship" : "Mother"
+        },
+        "first_name" : "Aubrey",
+        "gender" : "F",
+        "group" : {
+          "id" : "003",
+          "type" : "twos"
+        },
+        "id" : "0000000001",
+        "last_name" : "Torres",
+        "latest_check" : {
+          "check_by" : "20000000001",
+          "time" : "2018-11-30 09:35:29.123",
+          "type" : "out"
+        },
+        "parent_id" : "20000000001",
+        "role" : "student"
+      }
+    }
+  }
+  

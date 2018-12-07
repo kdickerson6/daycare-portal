@@ -18,12 +18,17 @@
   background-color: #db4c58;
 }
 
-.Form-input {
+/* .Form-input {
   align-content: center;
-}
+} */
 
 .Admin-tabs {
   padding: 25px;
+  align-content: center;
+}
+
+.Lookup {
+  text-align: center;
   align-content: center;
 }
 

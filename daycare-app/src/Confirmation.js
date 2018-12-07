@@ -1,5 +1,4 @@
-import React, { Component } from 'react'; 
-import { Button} from 'react-materialize';
+import React, { Component } from 'react';
 
 class Confirmation extends Component {
     render() {

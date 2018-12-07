@@ -40,7 +40,7 @@ class App extends Component {
     return (
       <div>
         <nav>
-          <Navbar className="Nav" brand='Day Care Portal' right>
+          <Navbar className="Nav" brand='Day Care Portal' href='https://kdickerson6.github.io/daycare-portal' right>
             <NavItem onClick={this.handleHomeClick.bind(this)}>Home</NavItem>
             <NavItem onClick={this.handleAdminClick.bind(this)}>Admin</NavItem>
           </Navbar>

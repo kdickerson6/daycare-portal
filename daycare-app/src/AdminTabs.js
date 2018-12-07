@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { Tab, Tabs, Row } from 'react-materialize';
 import Graphs from './Graphs.js';
 import Lookup from './Lookup.js';
+import Modify from './Modify.js';
 
 class AdminTabs extends Component {
     render() {
@@ -11,7 +12,7 @@ class AdminTabs extends Component {
                 <Tabs className='tab-demo z-depth-1'>
                     <Tab title="Dashboard" active ><Graphs/></Tab>
                     <Tab title="Lookup"><Lookup/></Tab>
-                    <Tab title="Modify">Test 3</Tab>
+                    <Tab title="Modify"><Modify/></Tab>
                 </Tabs>
             </Row>
             </div>

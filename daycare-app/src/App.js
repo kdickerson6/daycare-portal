@@ -21,7 +21,7 @@ class App extends Component {
   }
 
   handleCancelClick() {
-    this.setState({displayCheckInOut: false, id: '', displayAdmin: false});
+    this.setState({displayCheckInOut: false, displayAdmin: false, id: ''});
   }
 
   handleAdminClick() {

@@ -22,6 +22,11 @@
   align-content: center;
 }
 
+.Admin-tabs {
+  padding: 25px;
+  align-content: center;
+}
+
 /* .Cancel {
   background-color: indianred;
 }

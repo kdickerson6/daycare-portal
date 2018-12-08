@@ -1,12 +1,15 @@
 import React, { Component } from 'react';
 import { Table, Button } from 'react-materialize';
 import firebase from './firebase.js';
+import ModifyForm from './ModifyForm.js';
 
 class Modify extends Component {
     constructor(props) {
         super(props);
         this.state = {
-            members: []
+            members: [], 
+            displayForm: false, 
+            currentId: ''
         }
     }
 
@@ -27,9 +30,20 @@ class Modify extends Component {
         });
     }
 
+    handleEditClick(id) {
+        this.setState({displayForm: true, currentId: id});
+    }
+
+    handleBackClick() {
+        this.setState({displayForm: false});
+    }
+
     render() {
+        const shouldDisplayForm = this.state.displayForm;
         return(
             <div>
+                { shouldDisplayForm ? 
+                <ModifyForm backClickHandler={this.handleBackClick.bind(this)} currentId={this.state.currentId}/> : 
                 <Table>
                 <thead>
                     <tr>
@@ -43,18 +57,20 @@ class Modify extends Component {
 
                 <tbody>
                     {this.state.members.map((member) => {
+                        var currentId = member.id;
                         return(
                             <tr>
                                 <td>{member.id}</td>
                                 <td>{member.name}</td>
                                 <td>check {member.check_in_out}</td>
                                 <td>{member.check_in_out_time}</td>
-                                <td><Button waves='light'>Edit</Button></td>
+                                <td><Button waves='light' onClick={this.handleEditClick.bind(this, currentId)}>Edit</Button></td>
                             </tr>
                         )
                     })}
                 </tbody>
                 </Table>
+                }
             </div>
         );
     }

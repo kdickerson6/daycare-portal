@@ -46,6 +46,7 @@ class PersonInfo extends Component {
                 <h5>Phone: {this.state.phone}</h5>
                 <h4>Emergency Information</h4>
                 <h5>Emergency Contact: {this.state.emergency_contact_name}</h5>
+                <h5>Emergency Phone: {this.state.phone}</h5>
                 <h5>Relationship: {this.state.emergency_contact_relationship}</h5>
                 <Button waves='light' onClick={this.backClickHandler.bind(this)}>Back</Button>
             </div>

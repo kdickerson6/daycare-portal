@@ -31,7 +31,7 @@ class Lookup extends Component {
             <div className="Lookup">
                 {shouldDisplayInfo ? <PersonInfo backClickHandler={this.handleBackClick.bind(this)} id={this.state.id}/> : 
                     <div>
-                        <h4>Please enter a parent or teacher ID to retrieve information.</h4>
+                        <h4>Please enter a student or teacher ID to retrieve information.</h4>
                         <Row>
                             <Col offset="s3 m3 l4"></Col>
                             <Input s={6} m={6} l={4} label="Student or Teacher ID" onChange={this.handleInputChange.bind(this)} />

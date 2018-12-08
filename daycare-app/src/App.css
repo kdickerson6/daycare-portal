@@ -32,6 +32,12 @@
   align-content: center;
 }
 
+.Modify-form {
+  padding: 25px;
+  text-align: center;
+  align-content: center;
+}
+
 /* .Cancel {
   background-color: indianred;
 }

@@ -10,8 +10,8 @@ class AdminTabs extends Component {
             <div className="Admin-tabs">
             <Row>
                 <Tabs className='tab-demo z-depth-1'>
-                    <Tab title="Lookup" active><Lookup/></Tab>
-                    <Tab title="Modify"><Modify/></Tab>
+                    <Tab title="History" active><Modify/></Tab>
+                    <Tab title="Lookup"><Lookup/></Tab>
                     <Tab title="Dashboard"><Graphs/></Tab>
                 </Tabs>
             </Row>

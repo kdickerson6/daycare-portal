@@ -3,8 +3,7 @@ import firebase from './firebase.js';
 
 class Confirmation extends Component {
     componentDidMount() {
-        firebase.database().ref('daycare/' + this.props.id + '/latest_check').set({
-            'check_by': this.props.id, // TODO: This isn't quite working, need to be able to link parent and children
+        firebase.database().ref('daycare/' + this.props.id + '/latest_check').update({
             'time': this.props.time, 
             'type': this.props.action
         });

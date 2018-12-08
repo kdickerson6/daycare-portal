@@ -27,6 +27,7 @@
   ],
   "homepage": "http://kdickerson6.github.io/daycare-portal",
   "devDependencies": {
+    "firebase": "^5.7.0",
     "gh-pages": "^2.0.1"
   }
 }

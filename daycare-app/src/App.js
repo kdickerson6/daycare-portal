@@ -5,6 +5,7 @@ import CheckInOut from './CheckInOut.js';
 import Admin from './Admin.js';
 import Logo from './aubdaycare.png';
 import './App.css';
+import firebase from './firebase.js';
 
 class App extends Component {
   constructor(props) {
@@ -31,7 +32,6 @@ class App extends Component {
   handleHomeClick() {
     this.setState({displayCheckInOut: false, displayAdmin: false});
   }
-
 
   render() {
     const shouldDisplayCheckInOut = this.state.displayCheckInOut;

@@ -37,7 +37,7 @@ class CheckInOut extends Component {
                     person_time: member.latest_check.time
                 })
             }
-        })
+        });
     }
 
     cancelClickHandler() {
@@ -46,7 +46,7 @@ class CheckInOut extends Component {
 
     checkInOutHandler() {
         // For now console logging -- will obviously store something in the DB
-        var currentTimestamp = new Date().toUTCString();
+        var currentTimestamp = new Date().toLocaleString();
 
         if(this.state.checkIn) {
             console.log('Check OUT Recorded');

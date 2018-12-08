@@ -13,7 +13,7 @@ class Confirmation extends Component {
     render() {
         return(
             <div>
-                <h4>Thank you! You have been successfully *checked {this.props.action}*!</h4>
+                <h4>Thank you! You have been successfully <b>checked {this.props.action}!</b></h4>
             </div>
         );
     }

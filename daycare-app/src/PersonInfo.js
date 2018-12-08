@@ -2,10 +2,20 @@ import React, { Component } from 'react';
 import { Button } from 'react-materialize';
 
 class PersonInfo extends Component {
+    constructor(props) {
+        super(props);
+        this.state = {
+            name: ''
+        };
+    }
 
-backClickHandler() {
-    this.props.backClickHandler();
-}
+    componentDidMount() {
+
+    }
+
+    backClickHandler() {
+        this.props.backClickHandler();
+    }
 
     render() {
         return(

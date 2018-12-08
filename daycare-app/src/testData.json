@@ -1,6 +1,6 @@
 {
   "daycare": {
-    "member": {
+    "1234": {
       "contact_info": {
         "city": "Plantation",
         "phone": "3214567898",
@@ -28,6 +28,36 @@
         "type": "out"
       },
       "parent_id": "20000000001",
+      "role": "student"
+    },
+    "7890": {
+      "contact_info": {
+        "city": "Pembroke Pines",
+        "phone": "7276426471",
+        "postal_code": "33025",
+        "state": "FL",
+        "street_address": "10700 City Center Blvd Apt 5279"
+      },
+      "emergency_contact": {
+        "first_name": "Stephanie",
+        "id": "70000000001",
+        "last_name": "Cruz",
+        "relationship": "Mother"
+      },
+      "first_name": "Stormy",
+      "gender": "F",
+      "group": {
+        "id": "003",
+        "type": "twos"
+      },
+      "id": "7890",
+      "last_name": "Cruz",
+      "latest_check": {
+        "check_by": "20000000001",
+        "time": "2018-11-30 09:35:29.123",
+        "type": "out"
+      },
+      "parent_id": "70000000001",
       "role": "student"
     }
   }

@@ -67,7 +67,6 @@ class CheckInOut extends Component {
     }
 
     checkInOutHandler() {
-        // For now console logging -- will obviously store something in the DB
         var currentTimestamp = new Date().toLocaleString();
 
         if(this.state.checkIn) {

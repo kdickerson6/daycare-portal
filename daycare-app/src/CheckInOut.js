@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Button } from 'react-materialize';
+import { Input, Button } from 'react-materialize';
 import Confirmation from './Confirmation.js';
 import firebase from './firebase.js'
 
@@ -18,26 +18,48 @@ class CheckInOut extends Component {
     }
 
     componentDidMount() {
-        this.setState({person_id : this.props.currentId});
-        const memberRef = firebase.database().ref('daycare/' + this.props.currentId);
-        memberRef.on('value',(snapshot) => {
-            let member = snapshot.val();
-            let memberName = member.first_name + ' ' + member.last_name;
-            let lastAction = member.latest_check.type;
-            if(lastAction === 'in') {
-                this.setState({
-                    checkIn: true, 
-                    person_name: memberName,
-                    person_time: member.latest_check.time
-                });
-            } else if (lastAction === 'out') {
-                this.setState({
-                    checkIn: false, 
-                    person_name: memberName,
-                    person_time: member.latest_check.time
-                })
-            }
-        });
+        this.setState({person_id : this.props.currentId, role: this.props.currentRole});
+        if(this.props.currentRole === 'student') {
+            const memberRef = firebase.database().ref('daycare/students/' + this.props.currentId);
+            memberRef.on('value',(snapshot) => {
+                let member = snapshot.val();
+                let memberName = member.first_name + ' ' + member.last_name;
+                let lastAction = member.latest_check.type;
+                if(lastAction === 'in') {
+                    this.setState({
+                        checkIn: true, 
+                        person_name: memberName,
+                        person_time: member.latest_check.time
+                    });
+                } else if (lastAction === 'out') {
+                    this.setState({
+                        checkIn: false, 
+                        person_name: memberName,
+                        person_time: member.latest_check.time
+                    })
+                }
+            });
+        } else if(this.props.currentRole === 'teacher') {
+            const memberRef = firebase.database().ref('daycare/teachers/' + this.props.currentId);
+            memberRef.on('value',(snapshot) => {
+                let member = snapshot.val();
+                let memberName = member.first_name + ' ' + member.last_name;
+                let lastAction = member.latest_check.type;
+                if(lastAction === 'in') {
+                    this.setState({
+                        checkIn: true, 
+                        person_name: memberName,
+                        person_time: member.latest_check.time
+                    });
+                } else if (lastAction === 'out') {
+                    this.setState({
+                        checkIn: false, 
+                        person_name: memberName,
+                        person_time: member.latest_check.time
+                    })
+                }
+            });
+        }
     }
 
     cancelClickHandler() {
@@ -67,7 +89,7 @@ class CheckInOut extends Component {
         
         return(
             <div className='CheckInOut'>
-            {isConfirmed ? <Confirmation action={this.state.action} time={this.state.current_time} id={this.state.person_id}/>
+            {isConfirmed ? <Confirmation action={this.state.action} time={this.state.current_time} id={this.state.person_id} role={this.state.role}/>
                 :
                 <div className='PersonInfo'>
                     <h4>ID NUMBER: {this.props.currentId}</h4>

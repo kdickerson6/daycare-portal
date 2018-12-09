@@ -1,0 +1,237 @@
+{
+    "daycare": {
+        "students": {
+            "1200000034": {
+                "contact_info": {
+                    "city": "Plantation",
+                    "phone": "3214567898",
+                    "postal_code": "33324",
+                    "state": "FL",
+                    "street_address": "1440 Finch Lane"
+                },
+                "emergency_contact": {
+                    "first_name": "Kristin",
+                    "id": "9900000099",
+                    "last_name": "Torres",
+                    "relationship": "Mother"
+                },
+                "first_name": "Aubrey",
+                "gender": "F",
+                "group": {
+                    "id": "003",
+                    "type": "twos"
+                },
+                "id": "1200000034",
+                "last_name": "Torres",
+                "latest_check": {
+                    "check_by": "9900000099",
+                    "time": "12/8/2018, 8:52:38 AM",
+                    "type": "in"
+                },
+                "parent": {
+                    "email": "jctorres@gmail.com",
+                    "first_name": "Jean-Carlo",
+                    "id": "9900000098",
+                    "last_name": "Torres",
+                    "phone": "4078763546"
+                },
+                "role": "student"
+            },
+            "7800000090": {
+                "contact_info": {
+                    "city": "Pembroke Pines",
+                    "phone": "7276426471",
+                    "postal_code": "33025",
+                    "state": "FL",
+                    "street_address": "10700 City Center Blvd Apt 5279"
+                },
+                "emergency_contact": {
+                    "first_name": "Stephanie",
+                    "id": "7700000077",
+                    "last_name": "Cruz",
+                    "relationship": "Mother"
+                },
+                "first_name": "Stormy",
+                "gender": "F",
+                "group": {
+                    "id": "003",
+                    "type": "twos"
+                },
+                "id": "7800000090",
+                "last_name": "Cruz",
+                "latest_check": {
+                    "check_by": "7700000077",
+                    "time": "12/8/2018, 5:50:22 PM",
+                    "type": "in"
+                },
+                "parent": {
+                    "email": "scruz@yahoo.com",
+                    "first_name": "Stephanie",
+                    "id": "7700000077",
+                    "last_name": "Cruz",
+                    "phone": "7276426471"
+                },
+                "role": "student"
+            },
+            "5501991040": {
+                "contact_info": {
+                    "city": "Davie",
+                    "phone": "9546372645",
+                    "postal_code": "33317",
+                    "state": "FL",
+                    "street_address": "29 Towncenter Drive"
+                },
+                "emergency_contact": {
+                    "first_name": "Kris",
+                    "id": "4611100073",
+                    "last_name": "Jenner",
+                    "relationship": "Grandmother"
+                },
+                "first_name": "True",
+                "gender": "F",
+                "group": {
+                    "id": "003",
+                    "type": "twos"
+                },
+                "id": "5501991040",
+                "last_name": "Thompson",
+                "latest_check": {
+                    "check_by": "5234",
+                    "time": "12/8/2018, 5:50:22 PM",
+                    "type": "in"
+                },
+                "parent": {
+                    "email": "kthomp@yahoo.com",
+                    "first_name": "Khloe",
+                    "id": "5300000045",
+                    "last_name": "Thompson",
+                    "phone": "9546372645"
+                },
+                "role": "student"
+            },
+            "3111111123": {
+                "contact_info": {
+                    "city": "Davie",
+                    "phone": "3056748374",
+                    "postal_code": "33323",
+                    "state": "FL",
+                    "street_address": "2233 Augustana Court"
+                },
+                "emergency_contact": {
+                    "first_name": "George",
+                    "id": "3800000087",
+                    "last_name": "Smith",
+                    "relationship": "Father"
+                },
+                "first_name": "Sophie",
+                "gender": "F",
+                "group": {
+                    "id": "001",
+                    "type": "toddler"
+                },
+                "id": "3111111123",
+                "last_name": "Smith",
+                "latest_check": {
+                    "check_by": "3300000043",
+                    "time": "12/8/2018, 5:50:22 PM",
+                    "type": "in"
+                },
+                "parent": {
+                    "email": "alicsmi@gmail.com",
+                    "first_name": "Alicia",
+                    "id": "3300000043",
+                    "last_name": "Smith",
+                    "phone": "3056748374"
+                },
+                "role": "student"
+            }
+        },
+        "teachers": {
+            "11110": {
+                "contact_info": {
+                    "city": "Plantation",
+                    "phone": "9548780990",
+                    "postal_code": "33324",
+                    "state": "FL",
+                    "street_address": "481 Pine Tree Lane"
+                },
+                "first_name": "Krista",
+                "gender": "F",
+                "group": {
+                    "id": "001",
+                    "type": "toddler"
+                },
+                "id": "11110",
+                "last_name": "Collins",
+                "latest_check": {
+                    "check_by": "11110",
+                    "time": "12/8/2018, 5:50:22 PM",
+                    "type": "in"
+                },
+                "role": "teacher",
+                "teacher_details": {
+                    "certification": "yes",
+                    "hire_date": "05/5/2009",
+                    "shift": "10:00 AM - 6:00 PM"
+                }
+            },
+            "11222": {
+                "contact_info": {
+                    "city": "Plantation",
+                    "phone": "3216723142",
+                    "postal_code": "33324",
+                    "state": "FL",
+                    "street_address": "481 Jaguar Drive"
+                },
+                "first_name": "Blake",
+                "gender": "F",
+                "group": {
+                    "id": "003",
+                    "type": "twos"
+                },
+                "id": "11222",
+                "last_name": "Bortles",
+                "latest_check": {
+                    "check_by": "11222",
+                    "time": "12/8/2018, 5:50:22 PM",
+                    "type": "in"
+                },
+                "role": "teacher",
+                "teacher_details": {
+                    "certification": "no",
+                    "hire_date": "05/5/2009",
+                    "shift": "7:00 AM - 3:00 PM"
+                }
+            }
+        },
+        "groups": {
+            "001": {
+                "classrooms": [
+                    {
+                        "capacity": "5",
+                        "id": "888",
+                        "room_number": "01"
+                    },
+                    {
+                        "capacity": "4",
+                        "id": "777",
+                        "room_number": "02"
+                    }
+                ],
+                "type": "toddler",
+                "role": "group"
+            },
+            "003": {
+                "classrooms": [
+                    {
+                        "capacity": "12",
+                        "id": "444",
+                        "room_number": "04"
+                    }
+                ],
+                "type": "twos",
+                "role": "group"
+            }
+        }
+    }
+}

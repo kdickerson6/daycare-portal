@@ -3,10 +3,17 @@ import firebase from './firebase.js';
 
 class Confirmation extends Component {
     componentDidMount() {
-        firebase.database().ref('daycare/' + this.props.id + '/latest_check').update({
-            'time': this.props.time, 
-            'type': this.props.action
-        });
+        if(this.props.role === 'student') {
+            firebase.database().ref('daycare/students/' + this.props.id + '/latest_check').update({
+                'time': this.props.time, 
+                'type': this.props.action
+            });
+        } else if(this.props.role === 'teacher') {
+            firebase.database().ref('daycare/teachers/' + this.props.id + '/latest_check').update({
+                'time': this.props.time, 
+                'type': this.props.action
+            });
+        }
     }
 
     render() {

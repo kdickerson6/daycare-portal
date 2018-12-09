@@ -1,8 +1,9 @@
 import React, { Component } from 'react';
 import { Tab, Tabs, Row } from 'react-materialize';
-import Graphs from './Graphs.js';
 import Lookup from './Lookup.js';
 import Modify from './Modify.js';
+import TeacherLookup from './TeacherLookup.js';
+import GroupLookup from './GroupLookup.js';
 
 class AdminTabs extends Component {
     render() {
@@ -11,8 +12,9 @@ class AdminTabs extends Component {
             <Row>
                 <Tabs className='tab-demo z-depth-1'>
                     <Tab title="History" active><Modify/></Tab>
-                    <Tab title="Lookup"><Lookup/></Tab>
-                    <Tab title="Dashboard"><Graphs/></Tab>
+                    <Tab title="Student Lookup"><Lookup/></Tab>
+                    <Tab title="Teacher Lookup"><TeacherLookup/></Tab>
+                    <Tab title="Group Lookup"><GroupLookup/></Tab>
                 </Tabs>
             </Row>
             </div>

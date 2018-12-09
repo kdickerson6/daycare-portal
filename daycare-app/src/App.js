@@ -13,12 +13,13 @@ class App extends Component {
     this.state = {
       displayCheckInOut: false,
       displayAdmin: false,
-      id:''
+      id:'', 
+      role: 'student'
     }
   }
 
-  handleEnterClick(idValue) {
-    this.setState({displayCheckInOut: true, id:idValue});
+  handleEnterClick(idValue, roleValue) {
+    this.setState({displayCheckInOut: true, id:idValue, role:roleValue});
   }
 
   handleCancelClick() {
@@ -50,7 +51,7 @@ class App extends Component {
           <header className="App-header">
             <img src={Logo} alt=""/>
           </header>
-          <div className="App">{shouldDisplayCheckInOut ? <CheckInOut currentId={this.state.id} cancelClickHandler={this.handleCancelClick.bind(this)}/> : <Form enterClickHandler={this.handleEnterClick.bind(this)}/>}</div>
+          <div className="App">{shouldDisplayCheckInOut ? <CheckInOut currentId={this.state.id} currentRole={this.state.role} cancelClickHandler={this.handleCancelClick.bind(this)}/> : <Form enterClickHandler={this.handleEnterClick.bind(this)}/>}</div>
         </div>)
         }
       </div>

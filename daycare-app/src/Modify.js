@@ -110,7 +110,7 @@ class Modify extends Component {
                                 <td>{member.teacher_name}</td>
                                 <td>check {member.teacher_check_in_out}</td>
                                 <td>{member.teacher_check_in_out_time}</td>
-                                <td><Button waves='light' onClick={this.handleEditClick.bind(this, currentId)}>Edit</Button></td>
+                                <td><Button waves='light' disabled>Edit</Button></td>
                             </tr>
                         )
                     })}

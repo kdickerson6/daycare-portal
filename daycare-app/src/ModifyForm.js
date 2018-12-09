@@ -9,9 +9,11 @@ class ModifyForm extends Component {
             let member = snapshot.val();
             let contactInfo = member.contact_info;
             let emergencyContact = member.emergency_contact;
+            let parent = member.parent;
             let latestCheck = member.latest_check;
             this.setState({
-                id: member.id, 
+                id: member.id,
+                role: member.role,
                 first_name: member.first_name,
                 last_name: member.last_name,
                 street_address: contactInfo.street_address, 
@@ -22,6 +24,11 @@ class ModifyForm extends Component {
                 emergency_contact_last_name: emergencyContact.last_name,
                 emergency_contact_phone: contactInfo.phone,
                 emergency_contact_relationship: emergencyContact.relationship,
+                parent_firstName: parent.first_name,
+                parent_lastName: parent.last_name,
+                parent_id: parent.id,
+                parent_email: parent.email,
+                parent_phone: parent.phone,
                 latest_check_type: latestCheck.type,
                 latest_check_time: latestCheck.time
             });
@@ -68,6 +75,22 @@ class ModifyForm extends Component {
         this.setState({emergency_contact_phone: e.target.value});
     }
 
+    handleParentFirstNameChange(e){
+        this.setState({parent_first_name: e.target.value});
+    }
+
+    handleParentLastNameChange(e){
+        this.setState({parent_first_name: e.target.value});
+    }
+
+    handleParentPhoneChange(e){
+        this.setState({parent_phone: e.target.value});
+    }
+
+    handleParentEmailChange(e){
+        this.setState({parent_email: e.target.value});
+    }
+
     handleLatestCheckTypeChange(e){
         this.setState({latest_check_type: e.target.value});
     }
@@ -78,13 +101,13 @@ class ModifyForm extends Component {
 
     handleSave() {
         // update names 
-        firebase.database().ref('daycare/' + this.state.id).update({
+        firebase.database().ref('daycare/students/' + this.state.id).update({
             first_name: this.state.first_name, 
             last_name: this.state.last_name
         });
 
         // update contact info
-        firebase.database().ref('daycare/' + this.state.id + '/contact_info').update({
+        firebase.database().ref('daycare/students/' + this.state.id + '/contact_info').update({
             street_address: this.state.street_address,
             city: this.state.city,
             state: this.state.state,
@@ -93,14 +116,22 @@ class ModifyForm extends Component {
         });
 
         // update emergency contact info
-        firebase.database().ref('daycare/' + this.state.id + '/emergency_contact').update({
+        firebase.database().ref('daycare/students/' + this.state.id + '/emergency_contact').update({
             first_name: this.state.emergency_contact_first_name,
             last_name: this.state.emergency_contact_last_name,
             relationship: this.state.emergency_contact_relationship
         });
 
+        // update parent info
+        firebase.database().ref('daycare/students/' + this.state.id + '/parent').update({
+            first_name: this.state.parent_firstName,
+            last_name: this.state.parent_lastName,
+            phone: this.state.parent_phone,
+            email: this.state.parent_email
+        });
+
         // update latest check
-        firebase.database().ref('daycare/' + this.state.id + '/latest_check').update({
+        firebase.database().ref('daycare/students/' + this.state.id + '/latest_check').update({
             type: this.state.latest_check_type,
             time: this.state.latest_check_time
         });
@@ -128,6 +159,13 @@ class ModifyForm extends Component {
                 <Input s={6} label="Emergency Contact Last Name" defaultValue={this.state.emergency_contact_last_name} onChange={this.handleEmergencyLastNameChange.bind(this)}/>
                 <Input s={6} label="Emergency Contact Phone" defaultValue={this.state.emergency_contact_phone} onChange={this.handleEmergencyPhoneChange.bind(this)}/>
                 <Input s={6} label="Emergency Contact Relationship" defaultValue={this.state.emergency_contact_relationship} onChange={this.handleEmergencyRelationshipChange.bind(this)}/>
+            </Row>
+            <Row>
+                <h4>Parent Information</h4>
+                <Input s={6} label="Parent First Name" defaultValue={this.state.parent_firstName} onChange={this.handleParentFirstNameChange.bind(this)}/>
+                <Input s={6} label="Parent Last Name" defaultValue={this.state.parent_lastName} onChange={this.handleParentLastNameChange.bind(this)}/>
+                <Input s={6} label="Parent Phone" defaultValue={this.state.parent_phone} onChange={this.handleParentPhoneChange.bind(this)}/>
+                <Input s={6} label="Parent Email" defaultValue={this.state.parent_email} onChange={this.handleParentEmailChange.bind(this)}/>
             </Row>
             <Row>
                 <h4>Last Check In / Out</h4>

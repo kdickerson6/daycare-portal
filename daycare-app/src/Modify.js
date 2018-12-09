@@ -23,6 +23,7 @@ class Modify extends Component {
                 newState.push({
                     student_id: members[member].id, 
                     student_name: members[member].first_name + ' ' + members[member].last_name,
+                    student_role: members[member].role,
                     student_check_in_out: members[member].latest_check.type, 
                     student_check_in_out_time: members[member].latest_check.time 
                 })
@@ -46,7 +47,9 @@ class Modify extends Component {
         });
     }
 
-    handleEditClick(id) {
+    handleEditClick(id, role) {
+        console.log('idddd:::' + id);
+        console.log('rolleeeee:::' + role);
         this.setState({displayForm: true, currentId: id});
     }
 
@@ -67,6 +70,7 @@ class Modify extends Component {
                     <tr>
                     <th data-field="id">ID</th>
                     <th data-field="name">Name</th>
+                    <th data-field="role">Role</th>
                     <th data-field="check-in-out">Check In / Out</th>
                     <th data-field="time">Time</th>
                     <th data-field="modify">Modify</th>
@@ -76,13 +80,15 @@ class Modify extends Component {
                 <tbody>
                     {this.state.student_members.map((member) => {
                         var currentId = member.student_id;
+                        var currentRole = member.student_role;
                         return(
                             <tr>
                                 <td>{member.student_id}</td>
                                 <td>{member.student_name}</td>
+                                <td>{member.student_role}</td>
                                 <td>check {member.student_check_in_out}</td>
                                 <td>{member.student_check_in_out_time}</td>
-                                <td><Button waves='light' onClick={this.handleEditClick.bind(this, currentId)}>Edit</Button></td>
+                                <td><Button waves='light' onClick={this.handleEditClick.bind(this, currentId, currentRole)}>Edit</Button></td>
                             </tr>
                         )
                     })}

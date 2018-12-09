@@ -20,7 +20,7 @@ self.__precacheManifest = [
     "url": "/daycare-portal/static/css/main.617344c3.chunk.css"
   },
   {
-    "revision": "44b8b1f20df0a59d230489a9d018c07c",
+    "revision": "39ded4d7f808042f17d3ad43984b3b12",
     "url": "/daycare-portal/index.html"
   }
 ];

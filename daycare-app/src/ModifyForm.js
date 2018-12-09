@@ -4,7 +4,7 @@ import firebase from './firebase.js';
 
 class ModifyForm extends Component {
     componentWillMount() {
-        const memberRef = firebase.database().ref('daycare/' + this.props.currentId);
+        const memberRef = firebase.database().ref('daycare/students/' + this.props.currentId);
         memberRef.on('value', (snapshot) => {
             let member = snapshot.val();
             let contactInfo = member.contact_info;

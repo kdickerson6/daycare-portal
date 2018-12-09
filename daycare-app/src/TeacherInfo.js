@@ -24,13 +24,16 @@ class TeacherInfo extends Component {
             let member = snapshot.val();
             let contactInfo = member.contact_info;
             let teacherDetails = member.teacher_details; 
+            let group = member.group;
             this.setState({
                 name: member.first_name + ' ' + member.last_name,
                 address: contactInfo.street_address + ' ' + contactInfo.city + ' ' + contactInfo.state + ' ' + contactInfo.postal_code,
                 phone: contactInfo.phone,
                 certification: teacherDetails.certification, 
                 hireDate: teacherDetails.hire_date, 
-                shift: teacherDetails.shift
+                shift: teacherDetails.shift,
+                group_id: group.id, 
+                group_type: group.type
             });
         });
     }
@@ -49,6 +52,7 @@ class TeacherInfo extends Component {
                 <h5>Certification: {this.state.certification}</h5>
                 <h5>Hire Date: {this.state.hireDate}</h5>
                 <h5>Shift: {this.state.shift}</h5>
+                <h5> Group {this.state.group_id} : {this.state.group_type} </h5>
                 <Button waves='light' onClick={this.backClickHandler.bind(this)}>Back</Button>
             </div>
         );

@@ -23,12 +23,15 @@ class PersonInfo extends Component {
         memberRef.on('value', (snapshot) => {
             let member = snapshot.val();
             let contactInfo = member.contact_info;
+            let group = member.group;
             let emergencyContact = member.emergency_contact; 
             let parent = member.parent;
             this.setState({
                 name: member.first_name + ' ' + member.last_name,
                 address: contactInfo.street_address + ' ' + contactInfo.city + ' ' + contactInfo.state + ' ' + contactInfo.postal_code,
                 phone: contactInfo.phone,
+                group_id: group.id, 
+                group_type: group.type,
                 emergency_contact_name: emergencyContact.first_name + ' ' + emergencyContact.last_name,
                 emergency_contact_relationship: emergencyContact.relationship,
                 parent_name: parent.first_name + ' ' + parent.last_name,
@@ -50,6 +53,7 @@ class PersonInfo extends Component {
                 <h5>Name: {this.state.name}</h5>
                 <h5>Address: {this.state.address}</h5>
                 <h5>Phone: {this.state.phone}</h5>
+                <h5>Group {this.state.group_id} : {this.state.group_type}</h5>
                 <h4>Emergency Information</h4>
                 <h5>Emergency Contact: {this.state.emergency_contact_name}</h5>
                 <h5>Emergency Phone: {this.state.phone}</h5>

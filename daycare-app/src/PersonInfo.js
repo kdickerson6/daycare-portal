@@ -1,6 +1,7 @@
 import React, { Component } from 'react'; 
 import { Button } from 'react-materialize';
 import firebase from './firebase.js'; 
+import ModifyForm from './ModifyForm.js';
 
 class PersonInfo extends Component {
     constructor(props) {
@@ -12,7 +13,8 @@ class PersonInfo extends Component {
             phone: '',
             emergency_contact_name: '',
             emergency_contact_relationship: '',
-            group: ''
+            group: '', 
+            displayModify: false
         };
     }
 
@@ -46,9 +48,16 @@ class PersonInfo extends Component {
         this.props.backClickHandler();
     }
 
+    handleEditClick() {
+        this.setState({displayModify: true});
+    }
+
     render() {
+        const shouldDisplayModify = this.state.displayModify;
         return(
             <div>
+            {shouldDisplayModify ? <ModifyForm backClickHandler={this.backClickHandler.bind(this)} currentId={this.state.id}/> : 
+                <div>
                 <h4>Information</h4>
                 <h5>Name: {this.state.name}</h5>
                 <h5>Address: {this.state.address}</h5>
@@ -62,7 +71,8 @@ class PersonInfo extends Component {
                 <h5>Name: {this.state.parent_name}</h5>
                 <h5>Email: {this.state.parent_email}</h5>
                 <h5>Phone: {this.state.parent_phone}</h5>
-                <Button waves='light' onClick={this.backClickHandler.bind(this)}>Back</Button>
+                <Button waves='light' onClick={this.backClickHandler.bind(this)}>Back</Button> <Button waves='light' onClick={this.handleEditClick.bind(this)}>Edit</Button>
+            </div>}
             </div>
         );
     }

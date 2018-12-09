@@ -1,13 +1,15 @@
 import React, { Component } from 'react';
 import { Row, Col, Input, Button } from 'react-materialize';
 import PersonInfo from './PersonInfo';
+import ModifyForm from './ModifyForm';
 
 class Lookup extends Component {
     constructor(props) {
         super(props);
         this.state = { 
             id: '',
-            displayInfo: false
+            displayInfo: false,
+            displayModify: false
         }
     }
 
@@ -40,7 +42,7 @@ class Lookup extends Component {
                             <Button waves='light' onClick={this.handleSearchClick.bind(this)}>Search</Button>
                         </Row>
                     </div>
-                }
+            }
             </div>
         );
     }

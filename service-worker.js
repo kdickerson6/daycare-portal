@@ -14,7 +14,7 @@
 importScripts("https://storage.googleapis.com/workbox-cdn/releases/3.6.3/workbox-sw.js");
 
 importScripts(
-  "/daycare-portal/precache-manifest.67721595ee758cac27a57187589780ba.js"
+  "/daycare-portal/precache-manifest.ef8b7685b22355fad77ad6ed9e52a9e1.js"
 );
 
 workbox.clientsClaim();
